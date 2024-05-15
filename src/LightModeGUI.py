@@ -33,10 +33,10 @@ class Ui_LightModeWindow(object):
         LightModeWindow.setLocale(QLocale(QLocale.Korean, QLocale.SouthKorea))
         self.centralwidget = QWidget(LightModeWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(0, 0, 200, 200))
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_CharImg = QLabel(self.centralwidget)
+        self.label_CharImg.setObjectName(u"label_CharImg")
+        self.label_CharImg.setGeometry(QRect(0, 0, 200, 200))
+        self.label_CharImg.setAlignment(Qt.AlignmentFlag.AlignCenter)
         LightModeWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(LightModeWindow)
@@ -46,6 +46,6 @@ class Ui_LightModeWindow(object):
 
     def retranslateUi(self, LightModeWindow):
         LightModeWindow.setWindowTitle(QCoreApplication.translate("LightModeWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("LightModeWindow", u"Logo Image", None))
+        self.label_CharImg.setText(QCoreApplication.translate("LightModeWindow", u"Logo Image", None))
     # retranslateUi
 

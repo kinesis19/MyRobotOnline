@@ -20,17 +20,25 @@ class MainModeWindow(QMainWindow):
 
     def openLightModeWindow(self):
         # 이미 LightModeWindow가 열려있는지 확인함.
+        self.hide()  # MainModeWindow를 숨김.
         if self.light_mode_window is None:
-            self.hide()  # MainModeWindow를 숨김.
-            self.light_mode_window = LightModeWindow()
-            self.light_mode_window.show()
+            self.light_mode_window = LightModeWindow(parent=self)
+        # 이미 생성된 LightModeWindow가 있는 경우 show만 호출함.
+        self.light_mode_window.show()
 
 # Light Mode Window Class
 class LightModeWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        super().__init__(parent)
         self.ui = Ui_LightModeWindow()
         self.ui.setupUi(self)
+
+        self.ui.label_CharImg.mousePressEvent = self.goToMainMode
+
+    def goToMainMode(self, event):
+        if self.parent():
+            self.parent().show()
+        self.close()
 
 # First Start, Main Window Show
 if __name__ == "__main__":

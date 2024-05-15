@@ -1,1 +1,2 @@
-sys.exit(app.exec())
+
+        if self.parent():
