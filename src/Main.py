@@ -9,9 +9,21 @@ class MainModeWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainModeWindow()
         self.ui.setupUi(self)
+        self.setupMenuBar()
 
-    # def setupUI(self, ):
+        # Light Mode Window를 멤버 변수로 유지함.
+        self.light_mode_window = None
 
+    def setupMenuBar(self):
+        action_light_mode = self.ui.actionLight_Mode
+        action_light_mode.triggered.connect(self.openLightModeWindow)
+
+    def openLightModeWindow(self):
+        # 이미 LightModeWindow가 열려있는지 확인함.
+        if self.light_mode_window is None:
+            self.hide()  # MainModeWindow를 숨김.
+            self.light_mode_window = LightModeWindow()
+            self.light_mode_window.show()
 
 # Light Mode Window Class
 class LightModeWindow(QMainWindow):
@@ -19,7 +31,6 @@ class LightModeWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_LightModeWindow()
         self.ui.setupUi(self)
-
 
 # First Start, Main Window Show
 if __name__ == "__main__":
@@ -29,13 +40,3 @@ if __name__ == "__main__":
     window.show()
 
     sys.exit(app.exec())
-
-
-
-# if __name__ == "__light__":
-#     app = QApplication([])
-
-#     window = LightModeWindow()
-#     window.show()
-
-#     sys.exit(app.exec())
