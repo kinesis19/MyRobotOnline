@@ -1,17 +1,41 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from MainGUI import Ui_MainWindow
+from MainModeGUI import Ui_MainModeWindow
+from LightModeGUI import Ui_LightModeWindow
 
-class MainWindow(QMainWindow):
+# Main Window Class
+class MainModeWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_MainModeWindow()
         self.ui.setupUi(self)
 
+    # def setupUI(self, ):
+
+
+# Light Mode Window Class
+class LightModeWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_LightModeWindow()
+        self.ui.setupUi(self)
+
+
+# First Start, Main Window Show
 if __name__ == "__main__":
     app = QApplication([])
 
-    window = MainWindow()
+    window = MainModeWindow()
     window.show()
 
     sys.exit(app.exec())
+
+
+
+# if __name__ == "__light__":
+#     app = QApplication([])
+
+#     window = LightModeWindow()
+#     window.show()
+
+#     sys.exit(app.exec())

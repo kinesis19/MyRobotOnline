@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainGUI.ui'
+## Form generated from reading UI file 'MainModeGUI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.0
 ##
@@ -20,24 +20,24 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QMenu, QMenuBar, QSizePolicy,
     QSlider, QStatusBar, QVBoxLayout, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(400, 300)
+class Ui_MainModeWindow(object):
+    def setupUi(self, MainModeWindow):
+        if not MainModeWindow.objectName():
+            MainModeWindow.setObjectName(u"MainModeWindow")
+        MainModeWindow.resize(400, 300)
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
-        MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QSize(400, 300))
-        MainWindow.setMaximumSize(QSize(400, 300))
-        MainWindow.setLocale(QLocale(QLocale.Korean, QLocale.SouthKorea))
-        self.action1 = QAction(MainWindow)
+        sizePolicy.setHeightForWidth(MainModeWindow.sizePolicy().hasHeightForWidth())
+        MainModeWindow.setSizePolicy(sizePolicy)
+        MainModeWindow.setMinimumSize(QSize(400, 300))
+        MainModeWindow.setMaximumSize(QSize(400, 300))
+        MainModeWindow.setLocale(QLocale(QLocale.Korean, QLocale.SouthKorea))
+        self.action1 = QAction(MainModeWindow)
         self.action1.setObjectName(u"action1")
-        self.actionLight_Mode = QAction(MainWindow)
+        self.actionLight_Mode = QAction(MainModeWindow)
         self.actionLight_Mode.setObjectName(u"actionLight_Mode")
-        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget = QWidget(MainModeWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
@@ -113,8 +113,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.horizontalFrame_Bot)
 
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
+        MainModeWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(MainModeWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 400, 33))
         self.menubar.setMaximumSize(QSize(400, 33))
@@ -122,29 +122,29 @@ class Ui_MainWindow(object):
         self.menuSettings.setObjectName(u"menuSettings")
         self.menuMode = QMenu(self.menubar)
         self.menuMode.setObjectName(u"menuMode")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
+        MainModeWindow.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(MainModeWindow)
         self.statusbar.setObjectName(u"statusbar")
         self.statusbar.setEnabled(True)
-        MainWindow.setStatusBar(self.statusbar)
+        MainModeWindow.setStatusBar(self.statusbar)
 
         self.menubar.addAction(self.menuSettings.menuAction())
         self.menubar.addAction(self.menuMode.menuAction())
         self.menuSettings.addAction(self.action1)
         self.menuMode.addAction(self.actionLight_Mode)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(MainModeWindow)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(MainModeWindow)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"My Robot Online", None))
-        self.action1.setText(QCoreApplication.translate("MainWindow", u"Name Setting", None))
-        self.actionLight_Mode.setText(QCoreApplication.translate("MainWindow", u"Light Mode", None))
-        self.label_Name.setText(QCoreApplication.translate("MainWindow", u"<Lv.1> Lailla", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"asdasdads", None))
-        self.menuSettings.setTitle(QCoreApplication.translate("MainWindow", u"Settings", None))
-        self.menuMode.setTitle(QCoreApplication.translate("MainWindow", u"Mode", None))
+    def retranslateUi(self, MainModeWindow):
+        MainModeWindow.setWindowTitle(QCoreApplication.translate("MainModeWindow", u"My Robot Online", None))
+        self.action1.setText(QCoreApplication.translate("MainModeWindow", u"Name Setting", None))
+        self.actionLight_Mode.setText(QCoreApplication.translate("MainModeWindow", u"Light Mode", None))
+        self.label_Name.setText(QCoreApplication.translate("MainModeWindow", u"<Lv.1> Lailla", None))
+        self.label.setText(QCoreApplication.translate("MainModeWindow", u"asdasdads", None))
+        self.menuSettings.setTitle(QCoreApplication.translate("MainModeWindow", u"Settings", None))
+        self.menuMode.setTitle(QCoreApplication.translate("MainModeWindow", u"Mode", None))
     # retranslateUi
 

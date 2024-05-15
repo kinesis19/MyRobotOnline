@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>LightModeWindow</class>
+ <widget class="QMainWindow" name="LightModeWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -45,7 +45,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Charactar/char_head.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Logo Image</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -53,8 +53,6 @@
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="Resources_LightModeGUI/resources_lightMode.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
