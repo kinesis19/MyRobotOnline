@@ -6,6 +6,8 @@ class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        self.setWindowOpacity(1) 
+
         self.hello = ["Hallo", "Hello", "Hola", "안녕하세요"]
 
         self.button = QtWidgets.QPushButton("Click me!")

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Character">
+    <file>char_2_idle.gif</file>
+  </qresource>
+</RCC>
