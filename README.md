@@ -12,4 +12,4 @@
 >    - Python(Extensions)
 
 > [Library]
-> - PyQT5
+> - PySide66
