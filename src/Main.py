@@ -1,7 +1,8 @@
 import sys
 import threading
+from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-from PySide6.QtGui import QMovie
+from PySide6.QtGui import QMovie, QPixmap, QAction
 from PySide6.QtCore import QDir
 from MainModeGUI import Ui_MainModeWindow
 from LightModeGUI import Ui_LightModeWindow
@@ -30,8 +31,6 @@ class MainModeWindow(QMainWindow):
         self.ui.label_CharImg.setMovie(movie)
         movie.start()
 
-
-
     def setupMenuBar(self):
         action_light_mode = self.ui.actionLight_Mode
         action_light_mode.triggered.connect(self.openLightModeWindow)
@@ -55,12 +54,52 @@ class LightModeWindow(QMainWindow):
         self.ui = Ui_LightModeWindow()
         self.ui.setupUi(self)
 
-        self.ui.label_CharImg.mousePressEvent = self.goToMainMode
+        self.setWindowOpacity(0.5)
 
+        # 캐릭터 이미지 세팅2
+        # resources 폴더 내의 PNG 이미지 경로 설정
+        png_path = QDir.current().filePath("resources/ImgCharacterHead2.png")
+        pixmap = QPixmap(png_path)
+        pixmap_resized = pixmap.scaled(100, 100)
+        self.ui.label_CharHeadImg.setPixmap(pixmap_resized)
+
+        
+        self.setWindowFlags(
+            QtCore.Qt.FramelessWindowHint # 윈도우 타이틀바 제거
+            | QtCore.Qt.WindowStaysOnTopHint # 항상 최상위 윈도우로 유지
+            | QtCore.Qt.SplashScreen # 작업 표시줄에 안 나타남
+        )
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
+
+        quitAction = QAction("E&xit", self, shortcut="Ctrl+Q",
+                triggered=QApplication.instance().quit)
+        self.addAction(quitAction)
+        self.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+        
+        backAction = QAction("MainMode", self, shortcut="Ctrl+1",
+            triggered=self.goToMainMode)
+        self.addAction(backAction)
+        self.setContextMenuPolicy(QtCore.Qt.ActionsContextMenu)
+
+        self.draggable = True  # 창을 드래그하여 이동 가능하도록 플래그 설정
+        self.old_pos = self.pos()  # 이전 위치 저장
+
+    def mousePressEvent(self, event):
+        if event.button() == QtCore.Qt.LeftButton and self.draggable:
+            self.old_pos = event.globalPos() - self.pos()  # 창을 클릭한 위치 저장
+
+    def mouseMoveEvent(self, event):
+        if event.buttons() == QtCore.Qt.LeftButton and self.draggable:
+            self.move(event.globalPos() - self.old_pos)  # 창을 새로운 위치로 이동
+
+    def mouseReleaseEvent(self, event):
+        pass
+    
     def goToMainMode(self, event):
         if self.parent():
             self.parent().show()
         self.close()
+
 
 # First Start, Main Window Show
 if __name__ == "__main__":
