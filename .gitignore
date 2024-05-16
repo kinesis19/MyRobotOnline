@@ -10,6 +10,9 @@ __pycache__/
 # C extensions
 *.so
 
+# My Robot Online
+*.mp3
+
 # Distribution / packaging
 .Python
 build/
