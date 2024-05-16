@@ -164,16 +164,106 @@
          <number>1</number>
         </property>
         <item>
+         <widget class="QFrame" name="verticalFrame_Left">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>186</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="pushButton_1">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>인사하기</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>놀아주기</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string>음식주기</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
          <widget class="QLabel" name="label">
           <property name="enabled">
            <bool>true</bool>
           </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
           <property name="text">
-           <string>asdasdads</string>
+           <string>&lt;Character Img&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="verticalFrame_right">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>186</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::Shape::Box</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>정보</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_5">
+             <property name="text">
+              <string>도감</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_6">
+             <property name="text">
+              <string>일기</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>

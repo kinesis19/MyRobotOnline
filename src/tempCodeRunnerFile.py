@@ -1,2 +1,2 @@
 
-        if self.parent():
+from MainModeGUI import Ui_MainModeWindow
