@@ -1,5 +1,8 @@
 import sys
+import threading
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtGui import QMovie
+from PySide6.QtCore import QDir
 from MainModeGUI import Ui_MainModeWindow
 from LightModeGUI import Ui_LightModeWindow
 from Hello import SayHello
@@ -17,6 +20,17 @@ class MainModeWindow(QMainWindow):
 
         # 클릭 이벤트 감지
         self.ui.pushButton_1.clicked.connect(self.button1Clicked)
+
+        # 캐릭터 이미지 세팅
+        # resources 폴더 내의 GIF 이미지 경로 설정
+        gif_path = QDir.current().filePath("resources/ImgCharacter.gif")
+
+        # QLabel에 GIF 이미지 표시
+        movie = QMovie(gif_path)
+        self.ui.label_CharImg.setMovie(movie)
+        movie.start()
+
+
 
     def setupMenuBar(self):
         action_light_mode = self.ui.actionLight_Mode

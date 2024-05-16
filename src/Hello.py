@@ -1,4 +1,5 @@
 import random
+import threading
 from PySide6.QtWidgets import QMainWindow
 from gtts import gTTS
 import os
@@ -13,21 +14,24 @@ class SayHello(QMainWindow):
 
     def SayingHello(self, window): # QMainWindow 인스턴스를 window로 받음
 
-        greetings_with_name = [f"안녕하세요, {self.user.name}!", f"Hello, {self.user.name}!"]
-        greetings_without_name = ["반가워요!", "Hello World!"]
+        greetings_with_name = [f"Hello, {self.user.name}!", f"Welcome, {self.user.name}!"]
+        greetings_without_name = ["How are you?", "Welcome Back! I missed you"]
         
-        if random.choice([True, False]):  # 사용자 이름을 포함하는 경우와 포함하지 않는 경우를 랜덤으로 선택
+        # 대사 랜덤 선택
+        if random.choice([True, False]):  
             selected_greeting = random.choice(greetings_with_name)
             window.statusBar().showMessage(selected_greeting)
-            SpeakingHello(selected_greeting)
+            # 음성 생성 및 재생을 비동기적으로 처리
+            threading.Thread(target=self.SpeakingHello, args=(selected_greeting,)).start()
         else:
             selected_greeting = random.choice(greetings_without_name)
             window.statusBar().showMessage(selected_greeting)
-            SpeakingHello(selected_greeting)
+            # 음성 생성 및 재생을 비동기적으로 처리
+            threading.Thread(target=self.SpeakingHello, args=(selected_greeting,)).start()
 
-def SpeakingHello(text):
-    tts = gTTS(text=text, lang='ko')
-    fileName = 'VoiceHello.mp3'
-    tts.save(fileName)
-    playsound.playsound(fileName)
-    os.remove(fileName)
+    def SpeakingHello(self, text):
+        tts = gTTS(text=text, lang='en')
+        fileName = 'VoiceHello.mp3'
+        tts.save(fileName)
+        playsound.playsound(fileName)
+        os.remove(fileName)

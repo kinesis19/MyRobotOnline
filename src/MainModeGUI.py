@@ -112,13 +112,13 @@ class Ui_MainModeWindow(object):
 
         self.horizontalLayout.addWidget(self.verticalFrame_Left)
 
-        self.label = QLabel(self.horizontalFrame_Mid)
-        self.label.setObjectName(u"label")
-        self.label.setEnabled(True)
-        self.label.setFrameShape(QFrame.Shape.Box)
-        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_CharImg = QLabel(self.horizontalFrame_Mid)
+        self.label_CharImg.setObjectName(u"label_CharImg")
+        self.label_CharImg.setEnabled(True)
+        self.label_CharImg.setFrameShape(QFrame.Shape.Box)
+        self.label_CharImg.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout.addWidget(self.label)
+        self.horizontalLayout.addWidget(self.label_CharImg)
 
         self.verticalFrame_right = QFrame(self.horizontalFrame_Mid)
         self.verticalFrame_right.setObjectName(u"verticalFrame_right")
@@ -199,7 +199,7 @@ class Ui_MainModeWindow(object):
         self.pushButton_1.setText(QCoreApplication.translate("MainModeWindow", u"\uc778\uc0ac\ud558\uae30", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainModeWindow", u"\ub180\uc544\uc8fc\uae30", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainModeWindow", u"\uc74c\uc2dd\uc8fc\uae30", None))
-        self.label.setText(QCoreApplication.translate("MainModeWindow", u"<Character Img>", None))
+        self.label_CharImg.setText(QCoreApplication.translate("MainModeWindow", u"<Character Img>", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainModeWindow", u"\uc815\ubcf4", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainModeWindow", u"\ub3c4\uac10", None))
         self.pushButton_6.setText(QCoreApplication.translate("MainModeWindow", u"\uc77c\uae30", None))

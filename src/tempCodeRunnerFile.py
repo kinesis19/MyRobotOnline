@@ -1,2 +1,0 @@
-
-from MainModeGUI import Ui_MainModeWindow
